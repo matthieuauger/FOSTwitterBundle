@@ -48,6 +48,6 @@ class TwitterAuthenticationEntryPoint implements AuthenticationEntryPointInterfa
             throw new ConnectionException('Could not connect to Twitter!');
         }
 
-        return new RedirectResponse($authURL);
+        return new Response('<html><head></head><body><script>top.location.href="'.$authURL.'";</script></body></html>');
     }
 }
